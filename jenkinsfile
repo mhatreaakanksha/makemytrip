@@ -38,8 +38,13 @@ pipeline {
                 stage('Building & Tag Docker Image') {
                             steps {
                                 echo 'Starting Building Docker Image'
+<<<<<<< HEAD
                                 sh 'docker build -t mhatreaakanksha/makemytrip:dev-makemytrip-v.1.${BUILD_NUMBER} .'
                                 sh 'docker build -t makemytrip:dev-makemytrip-v.1.${BUILD_NUMBER} .'
+=======
+                                sh 'docker build -t mhatreaakanksha/makemytrip:dev-makemytrip-v.1.${BUILD_NUMBER}.'
+                                sh 'docker build -t makemytrip:dev-makemytrip-v.1.${BUILD_NUMBER}.'
+>>>>>>> 13505b7170d6e2d55cfef0cbcde531b3cf32369e
                                 echo 'Completed  Building Docker Image'
                             }
                         }
@@ -57,7 +62,11 @@ pipeline {
                                          withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
                                          sh 'docker login docker.io -u mhatreaakanksha -p ${dockerhubCred}'
                                          echo "Push Docker Image to DockerHub : In Progress"
+<<<<<<< HEAD
                                          sh 'docker push mhatreaakanksha/makemytrip:dev-makemytrip-v.1.${BUILD_NUMBER} '
+=======
+                                         sh 'docker push mhatreaakanksha/makemytrip:dev-makemytrip-v.1.${BUILD_NUMBER}'
+>>>>>>> 13505b7170d6e2d55cfef0cbcde531b3cf32369e
                                          echo "Push Docker Image to DockerHub : In Progress"
                                          sh 'whoami'
                                          }
@@ -84,6 +93,7 @@ pipeline {
 }
     }
   }
+
 
 
 
