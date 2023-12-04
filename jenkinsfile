@@ -39,7 +39,7 @@ pipeline {
                             steps {
                                 echo 'Starting Building Docker Image'
                                 sh 'docker build -t mhatreaakanksha/makemytrip:dev-makemytrip-v.1.${BUILD_NUMBER} .'
-                                sh 'docker build -t makemytrip :dev-makemytrip-v.1.${BUILD_NUMBER}.'
+                                sh 'docker build -t makemytrip:dev-makemytrip-v.1.${BUILD_NUMBER}.'
                                 echo 'Completed  Building Docker Image'
                             }
                         }
