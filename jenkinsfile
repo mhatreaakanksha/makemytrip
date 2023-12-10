@@ -90,11 +90,11 @@ stage('Upload the docker Image to Nexus') {
            steps {
               script {
                  withCredentials([usernamePassword(credentialsId: 'nexus-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
-                 sh 'docker login http://3.108.185.82:8085/repository/makemytrip/ -u admin -p ${PASSWORD}'
+                 sh 'docker login http://13.232.117.178:8085/repository/makemytrip/ -u admin -p ${PASSWORD}'
                  echo "Push Docker Image to Nexus : In Progress"
-                sh 'docker tag makemytrip 3.108.185.82:8085/1makemytrip:dev-makemytrip-v.1.${BUILD NUMBER}'
+                sh 'docker tag makemytrip 13.232.117.178:8085/makemytrip:dev-makemytrip-v.1.${BUILD NUMBER}'
                  echo "Tagging the Docker Image: Completed"
-                 sh 'docker push 3.108.185.82:8085/makemytrip'
+                 sh 'docker push 13.232.117.178:8085/makemytrip'
                  echo "Push Docker Image to Nexus : Completed"
                  }
               }
